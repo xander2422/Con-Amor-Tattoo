@@ -1258,8 +1258,11 @@
         }
 
         /* ========== ARTIST PORTFOLIO PAGE ========== */
+        .artist-portfolio-page-header {
+            padding-top: 10rem;
+        }
         .artist-portfolio-hero {
-            padding: 10rem 3rem 4rem;
+            padding: 2rem 3rem 4rem;
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
@@ -1322,8 +1325,10 @@
             color: var(--white-dim);
         }
         .back-link {
-            display: inline-block;
-            padding: 10rem 3rem 0;
+            display: block;
+            padding: 0 3rem;
+            margin: 0 auto;
+            max-width: 1000px;
             font-family: 'Outfit', sans-serif;
             font-size: 0.8rem;
             letter-spacing: 0.1em;
@@ -1332,9 +1337,6 @@
             text-decoration: none;
             cursor: pointer;
             transition: color 0.3s ease;
-            max-width: 1000px;
-            margin: 0 auto;
-            display: block;
         }
         .back-link:hover {
             color: var(--white);
@@ -1409,10 +1411,11 @@
             .home-faq .faq-question { padding: 1.2rem 1.5rem; }
             .home-faq .faq-answer-inner { padding: 1rem 1.5rem 1.5rem; }
             .hero-cta { flex-direction: column; align-items: center; }
-            .artist-portfolio-hero { grid-template-columns: 1fr; text-align: center; padding: 4rem 1.5rem 3rem; gap: 2rem; }
+            .artist-portfolio-page-header { padding-top: 8rem; }
+            .artist-portfolio-hero { grid-template-columns: 1fr; text-align: center; padding: 2rem 1.5rem 3rem; gap: 2rem; }
             .artist-portfolio-photo { margin: 0 auto; width: 200px; height: 200px; }
             .artist-portfolio-info .artist-styles { justify-content: center; }
-            .back-link { padding: 8rem 1.5rem 0; }
+            .back-link { padding: 0 1.5rem; }
             .artist-portfolio-section { padding: 2rem 1.5rem 4rem; }
             .artist-portfolio-cta { padding: 1rem 1.5rem 4rem; }
         }
@@ -1782,7 +1785,9 @@
 
     <!-- ==================== MOREWICKED PORTFOLIO PAGE ==================== -->
     <div class="page" id="page-artist-morewicked">
-        <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        <div class="artist-portfolio-page-header">
+            <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        </div>
         <div class="artist-portfolio-hero">
             <div class="artist-portfolio-photo">
                 <img src="images/morewicked-web/morewicked-profile.jpg" alt="Morewicked, tattoo artist at Con Amor Tattoo">
@@ -1868,13 +1873,15 @@
         </div>
 
         <div class="artist-portfolio-cta">
-            <a class="cta-btn" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
+            <a href="#" class="btn btn-filled" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
         </div>
     </div>
 
     <!-- ==================== TEDIYAMA PORTFOLIO PAGE ==================== -->
     <div class="page" id="page-artist-tediyama">
-        <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        <div class="artist-portfolio-page-header">
+            <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        </div>
         <div class="artist-portfolio-hero">
             <div class="artist-portfolio-photo" style="display:flex;align-items:center;justify-content:center;color:var(--white-dim);font-size:0.8rem;">
                 Photo Coming Soon
@@ -1901,13 +1908,15 @@
         </div>
 
         <div class="artist-portfolio-cta">
-            <a class="cta-btn" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
+            <a href="#" class="btn btn-filled" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
         </div>
     </div>
 
     <!-- ==================== CHUNKYTATTOOS PORTFOLIO PAGE ==================== -->
     <div class="page" id="page-artist-chunkytattoos">
-        <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        <div class="artist-portfolio-page-header">
+            <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        </div>
         <div class="artist-portfolio-hero">
             <div class="artist-portfolio-photo" style="display:flex;align-items:center;justify-content:center;color:var(--white-dim);font-size:0.8rem;">
                 Photo Coming Soon
@@ -1934,7 +1943,7 @@
         </div>
 
         <div class="artist-portfolio-cta">
-            <a class="cta-btn" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
+            <a href="#" class="btn btn-filled" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
         </div>
     </div>
 
