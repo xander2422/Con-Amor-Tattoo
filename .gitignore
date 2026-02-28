@@ -1,0 +1,10 @@
+node_modules/
+package.json
+package-lock.json
+*.heic
+*.HEIC
+
+# Keep original high-res source images out of repo
+Images/Morewicked/
+Images/Chunky/
+Images/Tediyama/
