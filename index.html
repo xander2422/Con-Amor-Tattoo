@@ -897,6 +897,53 @@
             color: var(--white-dim);
         }
 
+        /* ========== LIGHTBOX ========== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 2rem;
+        }
+        .lightbox.open {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border: 1px solid var(--border);
+        }
+        .lightbox-title {
+            margin-top: 1rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            color: var(--white);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0.5rem;
+            z-index: 2001;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox-close:hover {
+            opacity: 0.6;
+        }
+
         /* ========== BOOK PAGE ========== */
         .book-hero {
             padding: 10rem 3rem 3rem;
@@ -1356,6 +1403,18 @@
             text-align: center;
             padding: 2rem 3rem 6rem;
         }
+        .artist-portfolio-cta .ig-follow {
+            display: inline-block;
+            margin-top: 1.2rem;
+            color: var(--white-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+        .artist-portfolio-cta .ig-follow:hover {
+            color: var(--white);
+        }
         .view-portfolio-btn {
             display: inline-block;
             margin-top: 1rem;
@@ -1461,6 +1520,13 @@
         <a href="#" onclick="navigateTo('portfolio'); closeMobile()">Portfolio</a>
         <a href="#" onclick="navigateTo('info'); closeMobile()">Studio Info</a>
         <a href="#" onclick="navigateTo('book'); closeMobile()">Consultation</a>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-title" id="lightbox-title"></div>
     </div>
 
     <!-- ==================== HOME PAGE ==================== -->
@@ -1649,7 +1715,7 @@
                 <div class="artist-full-image"><img src="images/morewicked-web/morewicked-profile.jpg" alt="Morewicked, tattoo artist at Con Amor Tattoo"></div>
                 <div class="artist-full-info">
                     <h3>Morewicked</h3>
-                    <p class="artist-handle"><a href="https://www.instagram.com/morewicked/" target="_blank" rel="noopener">@morewicked</a></p>
+                    <p class="artist-handle"><a href="https://www.instagram.com/morewicked?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener">@morewicked</a></p>
                     <p>Specializing in black and grey illustrative work with a dark, nature-inspired edge. From detailed birds and insects to skulls, florals, and gothic motifs, every piece is crafted with fine detail and bold composition. DM on Instagram to book a consultation or discuss custom work.</p>
                     <div class="artist-styles">
                         <span>Black &amp; Grey</span>
@@ -1666,7 +1732,7 @@
                 <div class="artist-full-image"><img src="images/tediyama-web/tediyama-profile.jpg" alt="Tediyama, tattoo artist at Con Amor Tattoo"></div>
                 <div class="artist-full-info">
                     <h3>Tediyama</h3>
-                    <p class="artist-handle"><a href="https://www.instagram.com/tediyama/" target="_blank" rel="noopener">@tediyama</a></p>
+                    <p class="artist-handle"><a href="https://www.instagram.com/tediyama?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener">@tediyama</a></p>
                     <p>Rooted in Japanese traditional aesthetics with bold dragons, koi, and hannya masks alongside detailed black and grey work. Also brings anime and pop culture to life on skin, from Kingdom Hearts to Pokemon, with fine line precision and dynamic composition. DM on Instagram to book a consultation or discuss custom work.</p>
                     <div class="artist-styles">
                         <span>Japanese</span>
@@ -1683,7 +1749,7 @@
                 <div class="artist-full-image"><img src="images/chunky-web/chunky-profile.jpg" alt="Chunkytattoos, tattoo artist at Con Amor Tattoo"></div>
                 <div class="artist-full-info">
                     <h3>Chunkytattoos</h3>
-                    <p class="artist-handle"><a href="https://www.instagram.com/chunkytattoos/" target="_blank" rel="noopener">@chunkytattoos</a></p>
+                    <p class="artist-handle"><a href="https://www.instagram.com/chunkytattoos?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener">@chunkytattoos</a></p>
                     <p>A versatile artist with range across multiple styles. From bold traditional pieces and vibrant color work to detailed black and grey realism, portraits, Chicano lettering, and pop culture designs. DM on Instagram to book a consultation or discuss custom work.</p>
                     <div class="artist-styles">
                         <span>Color</span>
@@ -1925,7 +1991,7 @@
             </div>
             <div class="artist-portfolio-info">
                 <h2>Morewicked</h2>
-                <p class="artist-handle"><a href="https://www.instagram.com/morewicked/" target="_blank" rel="noopener">@morewicked</a></p>
+                <p class="artist-handle"><a href="https://www.instagram.com/morewicked?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener">@morewicked</a></p>
                 <p class="artist-bio">Specializing in black and grey illustrative work with a dark, nature-inspired edge. From detailed birds and insects to skulls, florals, and gothic motifs, every piece is crafted with fine detail and bold composition.</p>
                 <div class="artist-styles">
                     <span>Black &amp; Grey</span>
@@ -2005,6 +2071,8 @@
 
         <div class="artist-portfolio-cta">
             <a href="#" class="btn btn-filled" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
+            <br>
+            <a href="https://www.instagram.com/morewicked?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener" class="ig-follow">Follow @morewicked on Instagram &rarr;</a>
         </div>
     </div>
 
@@ -2019,7 +2087,7 @@
             </div>
             <div class="artist-portfolio-info">
                 <h2>Tediyama</h2>
-                <p class="artist-handle"><a href="https://www.instagram.com/tediyama/" target="_blank" rel="noopener">@tediyama</a></p>
+                <p class="artist-handle"><a href="https://www.instagram.com/tediyama?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener">@tediyama</a></p>
                 <p class="artist-bio">Rooted in Japanese traditional aesthetics with bold dragons, koi, and hannya masks alongside detailed black and grey work. Also brings anime and pop culture to life on skin, from Kingdom Hearts to Pokemon, with fine line precision and dynamic composition. DM on Instagram to book a consultation or discuss custom work.</p>
                 <div class="artist-styles">
                     <span>Japanese</span>
@@ -2107,6 +2175,8 @@
 
         <div class="artist-portfolio-cta">
             <a href="#" class="btn btn-filled" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
+            <br>
+            <a href="https://www.instagram.com/tediyama?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener" class="ig-follow">Follow @tediyama on Instagram &rarr;</a>
         </div>
     </div>
 
@@ -2121,7 +2191,7 @@
             </div>
             <div class="artist-portfolio-info">
                 <h2>Chunkytattoos</h2>
-                <p class="artist-handle"><a href="https://www.instagram.com/chunkytattoos/" target="_blank" rel="noopener">@chunkytattoos</a></p>
+                <p class="artist-handle"><a href="https://www.instagram.com/chunkytattoos?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener">@chunkytattoos</a></p>
                 <p class="artist-bio">A versatile artist with range across multiple styles. From bold traditional pieces and vibrant color work to detailed black and grey realism, portraits, Chicano lettering, and pop culture designs. DM on Instagram to book a consultation or discuss custom work.</p>
                 <div class="artist-styles">
                     <span>Color</span>
@@ -2217,6 +2287,8 @@
 
         <div class="artist-portfolio-cta">
             <a href="#" class="btn btn-filled" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
+            <br>
+            <a href="https://www.instagram.com/chunkytattoos?igsh=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener" class="ig-follow">Follow @chunkytattoos on Instagram &rarr;</a>
         </div>
     </div>
 
@@ -2587,6 +2659,30 @@
                         item.classList.add('filtered-out');
                     }
                 });
+            });
+        });
+
+        // ========== LIGHTBOX ==========
+        function openLightbox(src, title) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Attach lightbox to artist portfolio page items only
+        document.querySelectorAll('[id^="page-artist-"] .portfolio-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const title = item.querySelector('h4');
+                if (img) openLightbox(img.src, title ? title.textContent : '');
             });
         });
 
