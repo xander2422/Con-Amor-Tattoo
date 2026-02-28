@@ -1240,6 +1240,156 @@
             color: var(--white);
         }
 
+        /* ========== PORTFOLIO FILTER ANIMATION ========== */
+        .portfolio-item {
+            transition: border-color 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+        }
+        .portfolio-item.filtered-out {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ========== ARTIST PORTFOLIO PAGE ========== */
+        .artist-portfolio-hero {
+            padding: 10rem 3rem 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .artist-portfolio-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--border);
+        }
+        .artist-portfolio-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .artist-portfolio-info h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+        .artist-portfolio-info .artist-handle {
+            margin-bottom: 1rem;
+        }
+        .artist-portfolio-info .artist-handle a {
+            color: var(--white-dim);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+        .artist-portfolio-info .artist-handle a:hover {
+            color: var(--white);
+        }
+        .artist-portfolio-info .artist-bio {
+            font-family: 'Outfit', sans-serif;
+            color: var(--white-dim);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .artist-portfolio-info .artist-styles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .artist-portfolio-info .artist-styles span {
+            padding: 0.35rem 0.9rem;
+            border: 1px solid var(--border);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .back-link {
+            display: inline-block;
+            padding: 10rem 3rem 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: block;
+        }
+        .back-link:hover {
+            color: var(--white);
+        }
+        .artist-portfolio-section {
+            padding: 3rem 3rem 6rem;
+        }
+        .artist-portfolio-section .section-label {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .artist-portfolio-section .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .artist-portfolio-cta {
+            text-align: center;
+            padding: 2rem 3rem 6rem;
+        }
+        .view-portfolio-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.5rem;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--white-dim);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .view-portfolio-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            transition: left 0.4s var(--transition);
+            z-index: -1;
+        }
+        .view-portfolio-btn:hover::before {
+            left: 0;
+        }
+        .view-portfolio-btn:hover {
+            color: var(--black);
+            border-color: var(--white);
+        }
+
         /* ========== RESPONSIVE ========== */
         @media (max-width: 900px) {
             nav { padding: 1rem 1.5rem; }
@@ -1259,6 +1409,12 @@
             .home-faq .faq-question { padding: 1.2rem 1.5rem; }
             .home-faq .faq-answer-inner { padding: 1rem 1.5rem 1.5rem; }
             .hero-cta { flex-direction: column; align-items: center; }
+            .artist-portfolio-hero { grid-template-columns: 1fr; text-align: center; padding: 4rem 1.5rem 3rem; gap: 2rem; }
+            .artist-portfolio-photo { margin: 0 auto; width: 200px; height: 200px; }
+            .artist-portfolio-info .artist-styles { justify-content: center; }
+            .back-link { padding: 8rem 1.5rem 0; }
+            .artist-portfolio-section { padding: 2rem 1.5rem 4rem; }
+            .artist-portfolio-cta { padding: 1rem 1.5rem 4rem; }
         }
 
         @media (max-width: 600px) {
@@ -1266,6 +1422,8 @@
             .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
             .hours-grid { grid-template-columns: 1fr; }
             .hours-grid .time { text-align: left; }
+            .artist-portfolio-photo { width: 160px; height: 160px; }
+            .artist-portfolio-info h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -1353,17 +1511,17 @@
                 <h2 class="section-title">Our Artists</h2>
             </div>
             <div class="artists-preview-grid">
-                <div class="artist-card" onclick="navigateTo('artists')">
+                <div class="artist-card" onclick="navigateTo('artist-morewicked')">
                     <div class="artist-avatar"><img src="images/morewicked-web/morewicked-profile.jpg" alt="Morewicked, tattoo artist at Con Amor Tattoo" style="width:100%;height:100%;object-fit:cover;"></div>
                     <h3>Morewicked</h3>
                     <p>@morewicked</p>
                 </div>
-                <div class="artist-card" onclick="navigateTo('artists')">
+                <div class="artist-card" onclick="navigateTo('artist-tediyama')">
                     <div class="artist-avatar">Photo</div>
                     <h3>Tediyama</h3>
                     <p>@tediyama</p>
                 </div>
-                <div class="artist-card" onclick="navigateTo('artists')">
+                <div class="artist-card" onclick="navigateTo('artist-chunkytattoos')">
                     <div class="artist-avatar">Photo</div>
                     <h3>Chunkytattoos</h3>
                     <p>@chunkytattoos</p>
@@ -1495,6 +1653,7 @@
                         <span>Dark Art</span>
                         <span>Nature</span>
                     </div>
+                    <button class="view-portfolio-btn" onclick="navigateTo('artist-morewicked')">View Portfolio</button>
                 </div>
             </div>
 
@@ -1509,6 +1668,7 @@
                         <span>Custom Work</span>
                         <span>DM to Book</span>
                     </div>
+                    <button class="view-portfolio-btn" onclick="navigateTo('artist-tediyama')">View Portfolio</button>
                 </div>
             </div>
 
@@ -1523,6 +1683,7 @@
                         <span>Custom Work</span>
                         <span>DM to Book</span>
                     </div>
+                    <button class="view-portfolio-btn" onclick="navigateTo('artist-chunkytattoos')">View Portfolio</button>
                 </div>
             </div>
         </div>
@@ -1546,76 +1707,234 @@
         </div>
 
         <div class="portfolio-grid">
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey color">
                 <img src="images/morewicked-web/morewicked-2.jpg" alt="Skull and snake tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Skull &amp; Snake</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey realism">
                 <img src="images/morewicked-web/morewicked-7.jpg" alt="Crow tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Crow</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey color">
                 <img src="images/morewicked-web/morewicked-9.jpg" alt="Moth tattoos by Morewicked">
                 <div class="overlay">
                     <h4>Moths</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="fineline">
                 <img src="images/morewicked-web/morewicked-6.jpg" alt="Bee and filigree tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Bee &amp; Filigree</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey">
                 <img src="images/morewicked-web/morewicked-1.jpg" alt="Bat creature tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Bat Creature</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="color">
                 <img src="images/morewicked-web/morewicked-4.jpg" alt="Capricorn tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Capricorn</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey">
                 <img src="images/morewicked-web/morewicked-5.jpg" alt="Centipede tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Centipede</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey">
                 <img src="images/morewicked-web/morewicked-10.jpg" alt="Floral tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Floral</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="fineline">
                 <img src="images/morewicked-web/morewicked-3.jpg" alt="Hummingbird tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Hummingbird</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey">
                 <img src="images/morewicked-web/morewicked-8.jpg" alt="Dark rose tattoo by Morewicked">
                 <div class="overlay">
                     <h4>Dark Rose</h4>
                     <p>by Morewicked</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- ==================== MOREWICKED PORTFOLIO PAGE ==================== -->
+    <div class="page" id="page-artist-morewicked">
+        <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        <div class="artist-portfolio-hero">
+            <div class="artist-portfolio-photo">
+                <img src="images/morewicked-web/morewicked-profile.jpg" alt="Morewicked, tattoo artist at Con Amor Tattoo">
+            </div>
+            <div class="artist-portfolio-info">
+                <h2>Morewicked</h2>
+                <p class="artist-handle"><a href="https://www.instagram.com/morewicked/" target="_blank" rel="noopener">@morewicked</a></p>
+                <p class="artist-bio">Specializing in black and grey illustrative work with a dark, nature-inspired edge. From detailed birds and insects to skulls, florals, and gothic motifs, every piece is crafted with fine detail and bold composition.</p>
+                <div class="artist-styles">
+                    <span>Black &amp; Grey</span>
+                    <span>Illustrative</span>
+                    <span>Dark Art</span>
+                    <span>Nature</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="artist-portfolio-section">
+            <p class="section-label">Gallery</p>
+            <h3 class="section-title">Portfolio</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey color">
+                    <img src="images/morewicked-web/morewicked-2.jpg" alt="Skull and snake tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Skull &amp; Snake</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey realism">
+                    <img src="images/morewicked-web/morewicked-7.jpg" alt="Crow tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Crow</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey color">
+                    <img src="images/morewicked-web/morewicked-9.jpg" alt="Moth tattoos by Morewicked">
+                    <div class="overlay">
+                        <h4>Moths</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="fineline">
+                    <img src="images/morewicked-web/morewicked-6.jpg" alt="Bee and filigree tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Bee &amp; Filigree</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey">
+                    <img src="images/morewicked-web/morewicked-1.jpg" alt="Bat creature tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Bat Creature</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="color">
+                    <img src="images/morewicked-web/morewicked-4.jpg" alt="Capricorn tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Capricorn</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey">
+                    <img src="images/morewicked-web/morewicked-5.jpg" alt="Centipede tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Centipede</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey">
+                    <img src="images/morewicked-web/morewicked-10.jpg" alt="Floral tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Floral</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="fineline">
+                    <img src="images/morewicked-web/morewicked-3.jpg" alt="Hummingbird tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Hummingbird</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-artist="morewicked" data-style="blackgrey">
+                    <img src="images/morewicked-web/morewicked-8.jpg" alt="Dark rose tattoo by Morewicked">
+                    <div class="overlay">
+                        <h4>Dark Rose</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="artist-portfolio-cta">
+            <a class="cta-btn" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
+        </div>
+    </div>
+
+    <!-- ==================== TEDIYAMA PORTFOLIO PAGE ==================== -->
+    <div class="page" id="page-artist-tediyama">
+        <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        <div class="artist-portfolio-hero">
+            <div class="artist-portfolio-photo" style="display:flex;align-items:center;justify-content:center;color:var(--white-dim);font-size:0.8rem;">
+                Photo Coming Soon
+            </div>
+            <div class="artist-portfolio-info">
+                <h2>Tediyama</h2>
+                <p class="artist-handle"><a href="https://www.instagram.com/tediyama/" target="_blank" rel="noopener">@tediyama</a></p>
+                <p class="artist-bio">Artist bio coming soon. DM on Instagram to discuss custom work and book a consultation.</p>
+                <div class="artist-styles">
+                    <span>Custom Work</span>
+                    <span>DM to Book</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="artist-portfolio-section">
+            <p class="section-label">Gallery</p>
+            <h3 class="section-title">Portfolio</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" style="display:flex;align-items:center;justify-content:center;">
+                    Portfolio coming soon
+                </div>
+            </div>
+        </div>
+
+        <div class="artist-portfolio-cta">
+            <a class="cta-btn" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
+        </div>
+    </div>
+
+    <!-- ==================== CHUNKYTATTOOS PORTFOLIO PAGE ==================== -->
+    <div class="page" id="page-artist-chunkytattoos">
+        <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
+        <div class="artist-portfolio-hero">
+            <div class="artist-portfolio-photo" style="display:flex;align-items:center;justify-content:center;color:var(--white-dim);font-size:0.8rem;">
+                Photo Coming Soon
+            </div>
+            <div class="artist-portfolio-info">
+                <h2>Chunkytattoos</h2>
+                <p class="artist-handle"><a href="https://www.instagram.com/chunkytattoos/" target="_blank" rel="noopener">@chunkytattoos</a></p>
+                <p class="artist-bio">Artist bio coming soon. DM on Instagram to discuss custom work and book a consultation.</p>
+                <div class="artist-styles">
+                    <span>Custom Work</span>
+                    <span>DM to Book</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="artist-portfolio-section">
+            <p class="section-label">Gallery</p>
+            <h3 class="section-title">Portfolio</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" style="display:flex;align-items:center;justify-content:center;">
+                    Portfolio coming soon
+                </div>
+            </div>
+        </div>
+
+        <div class="artist-portfolio-cta">
+            <a class="cta-btn" onclick="navigateTo('book'); return false;">Schedule a Consultation</a>
         </div>
     </div>
 
@@ -1956,10 +2275,36 @@
         }
 
         // ========== FILTER BUTTONS ==========
+        const filterMap = {
+            'all': null,
+            'black & grey': 'blackgrey',
+            'color': 'color',
+            'traditional': 'traditional',
+            'realism': 'realism',
+            'fine line': 'fineline'
+        };
+
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+
+                const filterKey = btn.textContent.trim().toLowerCase();
+                const styleValue = filterMap[filterKey];
+                const items = document.querySelectorAll('#page-portfolio .portfolio-item');
+
+                items.forEach(item => {
+                    if (!styleValue) {
+                        item.classList.remove('filtered-out');
+                        return;
+                    }
+                    const styles = (item.dataset.style || '').split(' ');
+                    if (styles.includes(styleValue)) {
+                        item.classList.remove('filtered-out');
+                    } else {
+                        item.classList.add('filtered-out');
+                    }
+                });
             });
         });
 
