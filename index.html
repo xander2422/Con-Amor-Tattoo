@@ -593,6 +593,79 @@
             border-color: #444;
         }
 
+        /* Home FAQ */
+        .home-faq {
+            padding: 6rem 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .home-faq .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .home-faq .faq-item {
+            border: 1px solid var(--border);
+            margin-bottom: -1px;
+            overflow: hidden;
+        }
+        .home-faq .faq-item:first-of-type {
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+        }
+        .home-faq .faq-item:last-of-type {
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+        .home-faq .faq-question {
+            padding: 1.4rem 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--dark);
+            transition: background 0.3s ease;
+            gap: 1rem;
+        }
+        .home-faq .faq-question:hover {
+            background: var(--dark-2);
+        }
+        .home-faq .faq-question h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .home-faq .faq-question .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.4s var(--transition), color 0.3s ease;
+            color: var(--white-dim);
+            flex-shrink: 0;
+        }
+        .home-faq .faq-item.open .faq-question .faq-icon {
+            transform: rotate(45deg);
+            color: var(--white);
+        }
+        .home-faq .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s var(--transition);
+        }
+        .home-faq .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .home-faq .faq-answer-inner {
+            padding: 1.25rem 2rem 1.75rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--white-dim);
+            border-top: 1px solid var(--border);
+        }
+        .home-faq .faq-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
         /* Instagram CTA */
         .ig-section {
             text-align: center;
@@ -1094,6 +1167,9 @@
             .artists-hero, .portfolio-hero, .book-hero, .info-hero { padding: 8rem 1.5rem 3rem; }
             .artists-grid, .portfolio-grid, .booking-container, .info-container { padding-left: 1.5rem; padding-right: 1.5rem; }
             .booking-form-section { padding: 2rem 1.5rem; }
+            .home-faq { padding: 4rem 1.5rem; }
+            .home-faq .faq-question { padding: 1.2rem 1.5rem; }
+            .home-faq .faq-answer-inner { padding: 1rem 1.5rem 1.5rem; }
             .hero-cta { flex-direction: column; align-items: center; }
         }
 
@@ -1120,7 +1196,7 @@
             <li><a href="#" onclick="navigateTo('artists')" data-page="artists">Artists</a></li>
             <li><a href="#" onclick="navigateTo('portfolio')" data-page="portfolio">Portfolio</a></li>
             <li><a href="#" onclick="navigateTo('info')" data-page="info">Studio Info</a></li>
-            <li><a href="#" onclick="navigateTo('book')" data-page="book" class="nav-cta">Book Now</a></li>
+            <li><a href="#" onclick="navigateTo('book')" data-page="book" class="nav-cta">Schedule Consultation</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMobile()">
             <span></span>
@@ -1135,7 +1211,7 @@
         <a href="#" onclick="navigateTo('artists'); closeMobile()">Artists</a>
         <a href="#" onclick="navigateTo('portfolio'); closeMobile()">Portfolio</a>
         <a href="#" onclick="navigateTo('info'); closeMobile()">Studio Info</a>
-        <a href="#" onclick="navigateTo('book'); closeMobile()">Book Now</a>
+        <a href="#" onclick="navigateTo('book'); closeMobile()">Schedule Consultation</a>
     </div>
 
     <!-- ==================== HOME PAGE ==================== -->
@@ -1149,7 +1225,7 @@
                 <div class="hero-divider"></div>
                 <p class="hero-info">4680 N. Blackstone, Fresno, CA</p>
                 <div class="hero-cta">
-                    <a href="#" class="btn btn-filled" onclick="navigateTo('book')">Book Appointment</a>
+                    <a href="#" class="btn btn-filled" onclick="navigateTo('book')">Schedule a Consultation</a>
                     <a href="#" class="btn" onclick="navigateTo('portfolio')">View Portfolio</a>
                 </div>
             </div>
@@ -1227,6 +1303,78 @@
                 <div style="text-align: center; margin-top: 2.5rem;">
                     <a href="#" class="btn" onclick="navigateTo('portfolio')">View Full Portfolio</a>
                 </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="home-faq" style="border-top: 1px solid var(--border);">
+            <div class="faq-header">
+                <p class="section-label">Common Questions</p>
+                <h2 class="section-title">FAQ</h2>
+            </div>
+
+            <div class="faq-item open">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Does Getting a Tattoo Hurt?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Pain varies depending on placement, size, and your personal tolerance. Some areas like ribs, spine, and inner arm tend to be more sensitive, while outer arms and thighs are generally easier to sit through. Most people describe the feeling as a consistent scratching or vibrating sensation. Your artist will work with you to make sure you're as comfortable as possible throughout the session.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Do You Use Numbing Cream?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        We don't apply numbing cream at the studio, but you're welcome to use a topical numbing product before your appointment. If you do, apply it about 30–45 minutes before your session and cover the area with plastic wrap. Keep in mind that some numbing agents can affect the skin's texture, so check with your artist first if you have questions about a specific product.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Deposits & Cancellations</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        A deposit may be required to secure your appointment. Deposits are non-refundable but will be applied toward your tattoo. Please give at least 48 hours notice if you need to reschedule. No-shows will forfeit their deposit. Contact your artist directly to discuss specific deposit requirements.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>What Should I Do Before My Session?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Arrive on time and well-rested. Eat a good meal before your appointment and stay hydrated. Wear comfortable clothing that allows easy access to the tattoo area. Avoid alcohol and blood-thinning medications for at least 24 hours before your session. Your artist will review the design with you and make any adjustments before starting.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>How Much Does a Tattoo Cost?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Pricing varies by size, detail, placement, and artist. Walk-in flash designs start at $60. Custom pieces are quoted on a case-by-case basis — DM your artist or email us with your idea for a quote. We accept cash and all major cards.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <a href="#" class="btn" onclick="navigateTo('info')">More Studio Info</a>
             </div>
         </section>
 
@@ -1377,21 +1525,21 @@
     <!-- ==================== BOOK PAGE ==================== -->
     <div class="page" id="page-book">
         <div class="book-hero">
-            <p class="section-label">Get Inked</p>
-            <h2 class="section-title">Book Your Session</h2>
-            <p class="section-text" style="margin: 0 auto;">Ready for your next piece? Choose how you'd like to connect with us.</p>
+            <p class="section-label">Let's Talk</p>
+            <h2 class="section-title">Schedule a Consultation</h2>
+            <p class="section-text" style="margin: 0 auto;">Ready for your next piece? Start with a consultation and let's bring your vision to life.</p>
         </div>
 
         <div class="booking-container">
             <!-- Embedded Booking Form -->
             <div class="booking-form-section">
-                <h3>Request an Appointment</h3>
-                <p>Fill out the form below and we'll reach out to confirm your booking.</p>
+                <h3>Request a Consultation</h3>
+                <p>Fill out the form below and we'll reach out to discuss your piece and schedule a session.</p>
                 <div style="width:100%;height:500px;" data-fillout-id="cjT37WuobNus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div><script src="https://server.fillout.com/embed/v1/"></script>
             </div>
 
             <div style="text-align: center; margin: 3rem 0 2rem;">
-                <p class="section-label">Other Ways to Book</p>
+                <p class="section-label">Other Ways to Connect</p>
             </div>
 
             <div class="booking-methods">
@@ -1546,7 +1694,7 @@
                 <a href="#" onclick="navigateTo('home')">Home</a>
                 <a href="#" onclick="navigateTo('artists')">Artists</a>
                 <a href="#" onclick="navigateTo('portfolio')">Portfolio</a>
-                <a href="#" onclick="navigateTo('book')">Book Now</a>
+                <a href="#" onclick="navigateTo('book')">Schedule Consultation</a>
                 <a href="#" onclick="navigateTo('info')">Studio Info</a>
             </div>
             <div class="footer-col">
@@ -1620,6 +1768,12 @@
             block.classList.toggle('open');
         }
 
+        // ========== HOME FAQ ACCORDION ==========
+        function toggleFaq(question) {
+            const item = question.parentElement;
+            item.classList.toggle('open');
+        }
+
         // ========== FILTER BUTTONS ==========
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1646,7 +1800,7 @@
         });
 
         // Stagger grouped elements
-        document.querySelectorAll('.artist-full-card, .booking-method, .info-block, .portfolio-item, .gallery-item').forEach((el, i) => {
+        document.querySelectorAll('.artist-full-card, .booking-method, .info-block, .portfolio-item, .gallery-item, .faq-item').forEach((el, i) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             const delay = (i % 4) * 0.08;
