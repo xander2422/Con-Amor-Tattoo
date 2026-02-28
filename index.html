@@ -570,7 +570,7 @@
         /* Gallery Preview */
         .gallery-grid-preview {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 4px;
             margin-top: 3rem;
         }
@@ -1520,7 +1520,7 @@
                     <p>@morewicked</p>
                 </div>
                 <div class="artist-card" onclick="navigateTo('artist-tediyama')">
-                    <div class="artist-avatar">Photo</div>
+                    <div class="artist-avatar"><img src="images/tediyama-web/tediyama-profile.jpg" alt="Tediyama, tattoo artist at Con Amor Tattoo" style="width:100%;height:100%;object-fit:cover;"></div>
                     <h3>Tediyama</h3>
                     <p>@tediyama</p>
                 </div>
@@ -1541,12 +1541,13 @@
                 </div>
                 <div class="gallery-grid-preview">
                     <div class="gallery-item"><img src="images/morewicked-web/morewicked-2.jpg" alt="Skull and snake tattoo by Morewicked"></div>
+                    <div class="gallery-item"><img src="images/tediyama-web/tediyama-2.jpg" alt="Japanese sleeve tattoo by Tediyama"></div>
                     <div class="gallery-item"><img src="images/chunky-web/chunky-3.jpg" alt="Bride of Frankenstein portrait tattoo by Chunkytattoos"></div>
                     <div class="gallery-item"><img src="images/morewicked-web/morewicked-7.jpg" alt="Crow tattoo by Morewicked"></div>
-                    <div class="gallery-item"><img src="images/chunky-web/chunky-4.jpg" alt="Snake and rose tattoo by Chunkytattoos"></div>
-                    <div class="gallery-item"><img src="images/morewicked-web/morewicked-1.jpg" alt="Bat creature tattoo by Morewicked"></div>
+                    <div class="gallery-item"><img src="images/tediyama-web/tediyama-8.jpg" alt="Hannya mask tattoo by Tediyama"></div>
                     <div class="gallery-item"><img src="images/chunky-web/chunky-9.jpg" alt="Clown girl and mask tattoo by Chunkytattoos"></div>
                     <div class="gallery-item"><img src="images/morewicked-web/morewicked-6.jpg" alt="Bee and filigree tattoo by Morewicked"></div>
+                    <div class="gallery-item"><img src="images/tediyama-web/tediyama-3.jpg" alt="Dragon tattoo by Tediyama"></div>
                     <div class="gallery-item"><img src="images/chunky-web/chunky-15.jpg" alt="Pokemon starters tattoo by Chunkytattoos"></div>
                 </div>
                 <div style="text-align: center; margin-top: 2.5rem;">
@@ -1662,14 +1663,16 @@
 
             <!-- Artist 2 -->
             <div class="artist-full-card">
-                <div class="artist-full-image">Artist Photo Placeholder</div>
+                <div class="artist-full-image"><img src="images/tediyama-web/tediyama-profile.jpg" alt="Tediyama, tattoo artist at Con Amor Tattoo"></div>
                 <div class="artist-full-info">
                     <h3>Tediyama</h3>
                     <p class="artist-handle"><a href="https://www.instagram.com/tediyama/" target="_blank" rel="noopener">@tediyama</a></p>
-                    <p>Artist bio coming soon. DM on Instagram to book a session or discuss custom work.</p>
+                    <p>Rooted in Japanese traditional aesthetics with bold dragons, koi, and hannya masks alongside detailed black and grey work. Also brings anime and pop culture to life on skin, from Kingdom Hearts to Pokemon, with fine line precision and dynamic composition. DM on Instagram to book a consultation or discuss custom work.</p>
                     <div class="artist-styles">
-                        <span>Custom Work</span>
-                        <span>DM to Book</span>
+                        <span>Japanese</span>
+                        <span>Black &amp; Grey</span>
+                        <span>Anime</span>
+                        <span>Fine Line</span>
                     </div>
                     <button class="view-portfolio-btn" onclick="navigateTo('artist-tediyama')">View Portfolio</button>
                 </div>
@@ -1845,6 +1848,69 @@
                     <p>by Chunkytattoos</p>
                 </div>
             </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey color">
+                <img src="images/tediyama-web/tediyama-2.jpg" alt="Japanese sleeve tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Japanese Sleeve</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                <img src="images/tediyama-web/tediyama-3.jpg" alt="Dragon tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Dragon</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="color traditional">
+                <img src="images/tediyama-web/tediyama-8.jpg" alt="Hannya mask tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Hannya Mask</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="color fineline">
+                <img src="images/tediyama-web/tediyama-6.jpg" alt="Spider lilies tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Spider Lilies</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey color">
+                <img src="images/tediyama-web/tediyama-12.jpg" alt="Koi sleeve tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Koi Sleeve</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                <img src="images/tediyama-web/tediyama-1.jpg" alt="Eagle tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Eagle</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey realism">
+                <img src="images/tediyama-web/tediyama-17.jpg" alt="Master Chief tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Master Chief</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="fineline">
+                <img src="images/tediyama-web/tediyama-11.jpg" alt="Rosary tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Rosary</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
+            <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                <img src="images/tediyama-web/tediyama-13.jpg" alt="Anime character tattoo by Tediyama">
+                <div class="overlay">
+                    <h4>Anime Character</h4>
+                    <p>by Tediyama</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1948,16 +2014,18 @@
             <a class="back-link" onclick="navigateTo('artists'); return false;">&#8592; All Artists</a>
         </div>
         <div class="artist-portfolio-hero">
-            <div class="artist-portfolio-photo" style="display:flex;align-items:center;justify-content:center;color:var(--white-dim);font-size:0.8rem;">
-                Photo Coming Soon
+            <div class="artist-portfolio-photo">
+                <img src="images/tediyama-web/tediyama-profile.jpg" alt="Tediyama, tattoo artist at Con Amor Tattoo">
             </div>
             <div class="artist-portfolio-info">
                 <h2>Tediyama</h2>
                 <p class="artist-handle"><a href="https://www.instagram.com/tediyama/" target="_blank" rel="noopener">@tediyama</a></p>
-                <p class="artist-bio">Artist bio coming soon. DM on Instagram to discuss custom work and book a consultation.</p>
+                <p class="artist-bio">Rooted in Japanese traditional aesthetics with bold dragons, koi, and hannya masks alongside detailed black and grey work. Also brings anime and pop culture to life on skin, from Kingdom Hearts to Pokemon, with fine line precision and dynamic composition. DM on Instagram to book a consultation or discuss custom work.</p>
                 <div class="artist-styles">
-                    <span>Custom Work</span>
-                    <span>DM to Book</span>
+                    <span>Japanese</span>
+                    <span>Black &amp; Grey</span>
+                    <span>Anime</span>
+                    <span>Fine Line</span>
                 </div>
             </div>
         </div>
@@ -1966,8 +2034,73 @@
             <p class="section-label">Gallery</p>
             <h3 class="section-title">Portfolio</h3>
             <div class="portfolio-grid">
-                <div class="portfolio-item" style="display:flex;align-items:center;justify-content:center;">
-                    Portfolio coming soon
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                    <img src="images/tediyama-web/tediyama-1.jpg" alt="Eagle tattoo by Tediyama">
+                    <div class="overlay"><h4>Eagle</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey color">
+                    <img src="images/tediyama-web/tediyama-2.jpg" alt="Japanese sleeve tattoo by Tediyama">
+                    <div class="overlay"><h4>Japanese Sleeve</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                    <img src="images/tediyama-web/tediyama-3.jpg" alt="Dragon tattoo by Tediyama">
+                    <div class="overlay"><h4>Dragon</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                    <img src="images/tediyama-web/tediyama-4.jpg" alt="Skull butterfly tattoo by Tediyama">
+                    <div class="overlay"><h4>Skull Butterfly</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                    <img src="images/tediyama-web/tediyama-5.jpg" alt="Lionfish tattoo by Tediyama">
+                    <div class="overlay"><h4>Lionfish</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="color fineline">
+                    <img src="images/tediyama-web/tediyama-6.jpg" alt="Spider lilies tattoo by Tediyama">
+                    <div class="overlay"><h4>Spider Lilies</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="color traditional">
+                    <img src="images/tediyama-web/tediyama-7.jpg" alt="Charging bull tattoo by Tediyama">
+                    <div class="overlay"><h4>Charging Bull</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="color traditional">
+                    <img src="images/tediyama-web/tediyama-8.jpg" alt="Hannya mask tattoo by Tediyama">
+                    <div class="overlay"><h4>Hannya Mask</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                    <img src="images/tediyama-web/tediyama-9.jpg" alt="Calvin and Hobbes tattoo by Tediyama">
+                    <div class="overlay"><h4>Calvin &amp; Hobbes</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="color traditional">
+                    <img src="images/tediyama-web/tediyama-10.jpg" alt="Military insignia tattoo by Tediyama">
+                    <div class="overlay"><h4>Military Insignia</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="fineline">
+                    <img src="images/tediyama-web/tediyama-11.jpg" alt="Rosary tattoo by Tediyama">
+                    <div class="overlay"><h4>Rosary</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey color">
+                    <img src="images/tediyama-web/tediyama-12.jpg" alt="Koi sleeve tattoo by Tediyama">
+                    <div class="overlay"><h4>Koi Sleeve</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                    <img src="images/tediyama-web/tediyama-13.jpg" alt="Anime character tattoo by Tediyama">
+                    <div class="overlay"><h4>Anime Character</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                    <img src="images/tediyama-web/tediyama-14.jpg" alt="Pokemon Halloween tattoo by Tediyama">
+                    <div class="overlay"><h4>Pokemon Halloween</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey">
+                    <img src="images/tediyama-web/tediyama-15.jpg" alt="Pikachu tattoo by Tediyama">
+                    <div class="overlay"><h4>Pikachu</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="color">
+                    <img src="images/tediyama-web/tediyama-16.jpg" alt="Ghost character tattoo by Tediyama">
+                    <div class="overlay"><h4>Ghost Character</h4></div>
+                </div>
+                <div class="portfolio-item" data-artist="tediyama" data-style="blackgrey realism">
+                    <img src="images/tediyama-web/tediyama-17.jpg" alt="Master Chief tattoo by Tediyama">
+                    <div class="overlay"><h4>Master Chief</h4></div>
                 </div>
             </div>
         </div>
